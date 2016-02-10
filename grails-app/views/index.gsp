@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <title>Welcome to Grails</title>
+        <title>Welcome to Layouts!</title>
         <style type="text/css" media="screen">
             #status {
                 background-color: #eee;
@@ -78,6 +78,8 @@
     </head>
     <body>
         <a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+
+%{--
         <div id="status" role="complementary">
             <h1>Application Status</h1>
             <ul>
@@ -103,12 +105,11 @@
                 </g:each>
             </ul>
         </div>
-        <div id="page-body" role="main">
-            <h1>Welcome to Grails</h1>
-            <p>Congratulations, you have successfully started your first Grails application! At the moment
-               this is the default page, feel free to modify it to either redirect to a controller or display whatever
-               content you may choose. Below is a list of controllers that are currently deployed in this application,
-               click on each to execute its default action:</p>
+--}%
+        %{--<div id="page-body" role="main">--}%
+        <div>
+            <h1>Welcome to Layouts</h1>
+            <p>Congratulations, you have successfully started your first Layouts application!</p>
 
             <div id="controller-list" role="navigation">
                 <h2>Available Controllers:</h2>
@@ -121,3 +122,35 @@
         </div>
     </body>
 </html>
+%{--
+<!doctype html>
+<html>
+    <head>
+        <title>Welcome to Collab-Todo</title>
+            <meta name="layout" content="main" />
+        </head>
+    <body>
+        <h1 style="margin-left:20px;">Welcome to Collab-Todo</h1>
+        <p style="margin-left:20px;width:80%">
+            Welcome to the Collab-Todo application. This application was built
+            as part of the Apress Book, "Beginning Groovy and Grails."
+            Functionally, the application is a collaborative "To-Do"
+            list that allows users and their buddies to jointly
+            manage "To-Do" tasks.</p><br />
+        <p style="margin-left:20px;width:80%">
+            Building the Collab-Todo
+            application is used to walk the user through using Grails 1.0 to
+            build an application. Below is a list of controllers that are
+            currently deployed in this application. Click on each to execute
+            its default action:</p>
+        <br />
+        <div class="dialog" style="margin-left:20px;width:60%;">
+            <ul>
+                <g:each var="c" in="${grailsApplication.controllerClasses}">
+                    <li class="controller"><a href="${c.logicalPropertyName}">
+                        ${c.fullName}</a></li>
+                    </g:each>
+                </ul>
+            </div>
+    </body>
+</html>--}%
